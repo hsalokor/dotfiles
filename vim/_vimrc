@@ -54,6 +54,10 @@ set colorcolumn=85
 set list
 set listchars=tab:▸\ ,eol:¬
 
+au FocusLost * :wa
+
+inoremap jj <ESC>
+
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -65,23 +69,32 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
-au FocusLost * :wa
-
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-nnoremap <leader>a :Ack
-nnoremap <leader>q gqip
-nnoremap <leader>v V`]
-nnoremap <leader>ev <C-w><C-s><C-l>:e $MYVIMRC<cr>
-nnoremap <leader>sv :so $MYVIMRC<cr>
-inoremap jj <ESC>
-
-nnoremap <leader><tab> :NERDTreeToggle<cr>
-let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
+" Movement between windows
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Remove trailing whitespace from all lines in file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Reformat paragraph
+nnoremap <leader>q gqip
+
+" Select just pasted section in visual mode
+nnoremap <leader>v V`]
+
+"" Edit and reload .vimrc
+nnoremap <leader>ev <C-w><C-s><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>sv :so $MYVIMRC<cr>
+
+" NERDTree
+nnoremap <leader><tab> :NERDTreeToggle<cr>
+let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
+
+" Buffer list
+nmap <leader>d :BufExplorerHorizontalSplit<cr>
 
 " Yankring
 nnoremap <silent> <F3> :YRShow<cr>
@@ -92,5 +105,3 @@ nmap <leader>R :RainbowParenthesesToggle<CR>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
-
-nmap <leader>d :BufExplorerHorizontalSplit<cr>
