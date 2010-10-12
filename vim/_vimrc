@@ -51,8 +51,9 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
+let Tlist_Use_Right_Window=1
+let Tlist_WinWidth=55
 set list
-set listchars=tab:▸\ ,eol:¬
 
 au FocusLost * :wa
 
@@ -76,6 +77,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Go to tag
+nnoremap <leader>f <C-]>
+
 " Remove trailing whitespace from all lines in file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -96,6 +100,9 @@ let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 " Buffer list
 nmap <leader>d :BufExplorerHorizontalSplit<cr>
 
+" Tag list
+nnoremap <leader>t :TlistToggle<cr>
+
 " Yankring
 nnoremap <silent> <F3> :YRShow<cr>
 nnoremap <silent> <leader>y :YRShow<cr>
@@ -105,3 +112,6 @@ nmap <leader>R :RainbowParenthesesToggle<CR>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
+
+" Update ctags for C++
+map <leader>ut :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
