@@ -54,6 +54,7 @@ set colorcolumn=85
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=55
 set list
+set listchars=tab:.\ ,eol:¬
 
 au FocusLost * :wa
 
@@ -69,6 +70,10 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
+nnoremap <C-J> <C-D>
+nnoremap <C-K> <C-U>
+inoremap <C-J> <C-D>
+inoremap <C-K> <C-U>
 
 " Movement between windows
 nnoremap <leader>w <C-w>v<C-w>l
