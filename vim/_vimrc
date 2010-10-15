@@ -113,9 +113,6 @@ nmap <leader>d :FufBuffer<cr>
 " Find word under cursor
 nmap <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **/*."
 
-" Replace word under cursor
-nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
-
 " Tag list
 nnoremap <leader>t :TlistToggle<cr>
 
