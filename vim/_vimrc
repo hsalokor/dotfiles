@@ -116,10 +116,6 @@ nmap <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **/*."
 " Tag list
 nnoremap <leader>t :TlistToggle<cr>
 
-" Yankring
-nnoremap <silent> <F3> :YRShow<cr>
-nnoremap <silent> <leader>y :YRShow<cr>
-
 " Rainbows!
 nmap <leader>R :RainbowParenthesesToggle<CR>
 
