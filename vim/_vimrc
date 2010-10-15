@@ -123,4 +123,4 @@ nmap <leader>R :RainbowParenthesesToggle<CR>
 cmap w!! w !sudo tee % >/dev/null
 
 " Update ctags for C++
-map <leader>ut :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+noremap <leader>ut :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
