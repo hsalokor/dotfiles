@@ -117,6 +117,11 @@ nmap <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **/*."
 nnoremap <leader>t :TlistToggle<cr>
 
 " Rainbows!
+call rainbow_parenthsis#LoadBraces ()
+call rainbow_parenthsis#LoadSquare ()
+call rainbow_parenthsis#LoadRound ()
+call rainbow_parenthsis#LoadChevrons ()
+call rainbow_parenthsis#Activate ()
 nmap <leader>R :RainbowParenthesesToggle<CR>
 
 " Sudo to write
