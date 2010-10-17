@@ -2,7 +2,11 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
-colorscheme molokai
+if has("gui_running")
+    colorscheme molokai
+else
+    colorscheme neverland2
+endif
 syntax on
 
 set t_vb=
