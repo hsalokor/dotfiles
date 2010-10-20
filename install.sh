@@ -10,5 +10,6 @@ then
     rm -rf ~/.vim.bak
     cp -rf ~/.vim ~/.vim.bak
 fi
-cp -rf vim/_vim ~/.vim
+mkdir -p ~/.vim
+cp -rf vim/_vim/* ~/.vim/
 
