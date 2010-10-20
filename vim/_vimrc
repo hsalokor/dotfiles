@@ -109,6 +109,12 @@ let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 " Buffer list
 nmap <leader>b :BufExplorerHorizontalSplit<cr>
 
+" Close buffer without closing window (using bufkill)
+nnoremap <leader>k :BD<cr>
+
+" Close buffer without closing window (using bufkill)
+nmap <leader>,c :BD<cr>
+
 " Fuzzy matching key bindings
 nmap <leader>o :FufFile<cr>
 nmap <leader>O :FufFile **/<cr>
