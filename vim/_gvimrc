@@ -1,0 +1,13 @@
+" Gui options
+colorscheme molokai
+
+" Hide toolbar (T), menu (m) and right scrollbar (r)
+set guioptions-=T
+set guioptions-=m
+set guioptions-=r
+
+" Source a local configuration file if available.
+if filereadable(expand("~/.gvimrc.local"))
+  source ~/.gvimrc.local
+endif
+

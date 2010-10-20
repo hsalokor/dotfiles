@@ -2,17 +2,19 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
-if has("gui_running")
-    colorscheme molokai
-else
-    colorscheme neverland2
+colorscheme neverland2
+
+" Vim 7.3-specific options
+" These options are available only in Vim 7.3
+if v:version >= 730
+    set relativenumber
+    set undofile
+    set colorcolumn=85
 endif
+
 syntax on
 
 set t_vb=
-set guioptions-=T
-set guioptions-=m
-set guioptions-=r
 set nocompatible
 set modelines=0
 set tabstop=4
@@ -26,34 +28,31 @@ set autoindent
 set showmode
 set showcmd
 set hidden
-set wildmenu
 set wildmode=list:longest
 set cursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
-set undofile
 
-let mapleader = ","
-
-nnoremap / /\v
-vnoremap / /\v
 set ignorecase
 set smartcase
 set gdefault
 set incsearch
 set showmatch
 set hlsearch
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+
+let mapleader = ","
+
+nnoremap / /\v
+vnoremap / /\v
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-set colorcolumn=85
 
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=55
@@ -142,3 +141,8 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Update ctags for C++
 noremap <leader>ut :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" Source a local configuration file if available.
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif

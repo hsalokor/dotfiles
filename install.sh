@@ -2,8 +2,14 @@
 if [ -e ~/.vimrc ]
 then
     cp ~/.vimrc ~/.vimrc.bak
-    cp -rf vim/_vimrc ~/.vimrc
 fi
+cp -rf vim/_vimrc ~/.vimrc
+
+if [ -e ~/.gvimrc ]
+then
+    cp ~/.gvimrc ~/.gvimrc.bak
+fi
+cp -rf vim/_gvimrc ~/.gvimrc
 
 if [ -e ~/.vim ]
 then

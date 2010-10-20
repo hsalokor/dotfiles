@@ -2,6 +2,7 @@
 rm -rf vim
 mkdir -p vim
 cp -rf ~/.vimrc vim/_vimrc
+cp -rf ~/.gvimrc vim/_gvimrc
 cp -rf ~/.vim vim/_vim
 
 rm -rf xmonad
