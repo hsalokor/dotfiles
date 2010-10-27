@@ -6,6 +6,8 @@ set guioptions-=T
 set guioptions-=m
 set guioptions-=r
 
+highlight SpellBad term=underline gui=undercurl guisp=Orange
+
 " Source a local configuration file if available.
 if filereadable(expand("~/.gvimrc.local"))
   source ~/.gvimrc.local
