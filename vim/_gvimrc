@@ -1,6 +1,9 @@
 " Gui options
 colorscheme molokai
 
+" Set size maximized
+set lines=999 columns=999
+
 " Hide toolbar (T), menu (m) and right scrollbar (r)
 set guioptions-=T
 set guioptions-=m
