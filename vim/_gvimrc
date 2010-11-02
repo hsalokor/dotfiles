@@ -4,10 +4,11 @@ colorscheme molokai
 " Set size maximized
 set lines=999 columns=999
 
-" Hide toolbar (T), menu (m) and right scrollbar (r)
+" Hide toolbar (T), menu (m) and left and right scrollbar (r, L)
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r
+set guioptions-=L
 
 highlight SpellBad term=underline gui=undercurl guisp=Orange
 
