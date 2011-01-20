@@ -142,6 +142,12 @@ cmap w!! w !sudo tee % >/dev/null
 " Update ctags for C++
 noremap <leader>ut :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+" Setup Haskell mode
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
+au Bufenter *.hs compiler ghc
+au Bufenter *.ghci compiler ghc
+
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
