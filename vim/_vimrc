@@ -51,7 +51,6 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=55
 set list
@@ -105,9 +104,6 @@ let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 
 " Close buffer without closing window (using bufkill)
 nnoremap <leader>k :BD<cr>
-
-" Close buffer without closing window (using bufkill)
-nmap <leader>,c :BD<cr>
 
 " Fuzzy matching key bindings
 nmap <leader>o :FufFile<cr>
