@@ -47,8 +47,6 @@ set formatoptions=qrn1
 
 let mapleader = ","
 
-nnoremap / /\v
-vnoremap / /\v
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
