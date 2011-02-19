@@ -105,9 +105,6 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 nnoremap <leader><tab> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 
-" Buffer list
-nmap <leader>b :BufExplorerHorizontalSplit<cr>
-
 " Close buffer without closing window (using bufkill)
 nnoremap <leader>k :BD<cr>
 
