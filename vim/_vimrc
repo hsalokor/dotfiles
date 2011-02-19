@@ -111,7 +111,7 @@ nmap <leader>O :FufFile **/<cr>
 nmap <leader>d :FufBuffer<cr>
 
 " Find word under cursor
-nmap <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **/*."
+nmap <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **/*.<CR>"
 
 " Tag list
 nnoremap <leader>t :TlistToggle<cr>
