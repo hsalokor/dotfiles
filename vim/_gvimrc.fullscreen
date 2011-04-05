@@ -1,0 +1,10 @@
+" Include defaults
+source ~/.vimrc
+source ~/.gvimrc
+
+set guifont=Menlo:h18
+set columns=90
+set lastline=0
+colorscheme dante
+set nocursorline
+set nolist
