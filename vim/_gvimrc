@@ -10,6 +10,10 @@ set guioptions-=m
 set guioptions-=r
 set guioptions-=L
 
+" Map fullscreen switch
+nmap <F2> :so ~/.gvimrc<CR>
+nmap <F3> :so ~/.gvimrc.fullscreen<CR>
+
 highlight SpellBad term=underline gui=undercurl guisp=Orange
 
 " Source a local configuration file if available.
