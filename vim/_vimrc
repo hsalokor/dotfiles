@@ -113,9 +113,6 @@ nmap <leader>o :FufFile<cr>
 nmap <leader>O :FufFile **/<cr>
 nmap <leader>d :FufBuffer<cr>
 
-" Find word under cursor
-nmap <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **/*.<CR>"
-
 " Tag list
 nnoremap <leader>t :TlistToggle<cr>
 
@@ -132,9 +129,6 @@ nmap <leader>R :RainbowParenthesesToggle<CR>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
-
-" Update ctags for C++
-noremap <leader>ut :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Setup Haskell mode
 let g:haddock_browser = "open"
