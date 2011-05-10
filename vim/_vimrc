@@ -46,6 +46,8 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 
+set spell
+
 let mapleader = ","
 
 nnoremap <leader><space> :noh<cr>
