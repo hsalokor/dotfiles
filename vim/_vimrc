@@ -95,7 +95,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>q gqip
 
 " Select just pasted section in visual mode
-nnoremap <leader>v V`]
+nnoremap <leader><leader>k V`]
 
 "" Edit and reload .vimrc
 nnoremap <leader>ev <C-w><C-s><C-l>:e $MYVIMRC<cr>
@@ -120,7 +120,7 @@ nmap <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **/*.<CR>"
 nnoremap <leader>t :TlistToggle<cr>
 
 " Yankring
-nnoremap <silent> <leader>y :YRShow<cr>
+nnoremap <silent> <leader>Y :YRShow<cr>
 
 " Rainbows!
 call rainbow_parenthsis#LoadBraces ()
