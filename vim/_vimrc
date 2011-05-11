@@ -45,8 +45,7 @@ set hlsearch
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-
-set spell
+set nospell
 
 let mapleader = ","
 

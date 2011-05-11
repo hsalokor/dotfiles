@@ -8,3 +8,4 @@ set lastline=0
 colorscheme dante
 set nocursorline
 set nolist
+set spell
