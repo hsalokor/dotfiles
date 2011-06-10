@@ -58,6 +58,8 @@ customManageHook = [
 main = xmonad $ gnomeConfig {
     modMask = mod4Mask,
     focusFollowsMouse = False,
+    -- Fix Java apps by setting LG3D which apparently triggers different rendering path
+    startupHook = setWMName "LG3D",
     layoutHook = smartBorders $ desktopLayoutModifiers customLayoutHook,
     manageHook = manageHook gnomeConfig <+> composeAll customManageHook
 } `additionalKeysP` [
