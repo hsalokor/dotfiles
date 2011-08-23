@@ -11,6 +11,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Util.EZConfig
 import XMonad.Layout.IM
 import XMonad.Layout.Named
+import XMonad.Hooks.SetWMName
 import Data.Ratio ((%))
 
 nmaster = 1
