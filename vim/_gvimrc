@@ -2,7 +2,7 @@
 colorscheme molokai
 
 " Set size maximized
-set lines=999 columns=999
+set lines=60 columns=120
 
 " Hide toolbar (T), menu (m) and left and right scrollbar (r, L)
 set guioptions-=T
