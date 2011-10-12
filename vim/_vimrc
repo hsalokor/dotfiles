@@ -6,11 +6,9 @@ colorscheme neverland2
 
 " Vim 7.3-specific options
 " These options are available only in Vim 7.3
-if v:version >= 730
-    set relativenumber
-    set undofile
-    set colorcolumn=85
-endif
+set relativenumber
+set undofile
+set colorcolumn=85
 
 syntax on
 
@@ -58,7 +56,7 @@ let Tlist_WinWidth=55
 set list
 set listchars=tab:.\ ,eol:¬
 
-au FocusLost * :wa
+autocmd BufLeave,FocusLost silent! wall
 
 inoremap jj <ESC>
 
