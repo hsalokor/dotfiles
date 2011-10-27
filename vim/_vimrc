@@ -101,6 +101,7 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 " NERDTree
 nnoremap <leader><tab> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
+let NERDTreeDirArrows=1
 
 " Close buffer without closing window (using bufkill)
 nnoremap <leader>k :BD<cr>
