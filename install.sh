@@ -17,5 +17,6 @@ then
     cp -rf ~/.vim ~/.vim.bak
 fi
 mkdir -p ~/.vim
+rm -rf ~/.vim/bundle/*
 cp -rf vim/_vim/* ~/.vim/
 
