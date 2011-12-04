@@ -9,3 +9,4 @@ rm -rf xmonad
 mkdir -p xmonad
 cp -rf ~/.xmonad/xmonad.hs xmonad/xmonad.hs
 
+cp -rf ~/.tmux.conf tmux.conf

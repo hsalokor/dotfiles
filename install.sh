@@ -20,3 +20,4 @@ mkdir -p ~/.vim
 rm -rf ~/.vim/bundle/*
 cp -rf vim/_vim/* ~/.vim/
 
+cp -rf tmux.conf ~/.tmux.conf
