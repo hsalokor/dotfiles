@@ -8,7 +8,6 @@ colorscheme neverland2
 " These options are available only in Vim 7.3
 set relativenumber
 set undofile
-set colorcolumn=85
 
 syntax on
 
@@ -21,6 +20,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+set updatetime=4000
 set encoding=utf-8
 set scrolloff=3
 set autoindent
@@ -28,7 +28,7 @@ set showmode
 set showcmd
 set hidden
 set wildmode=list:longest
-set cursorline
+set nocursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
