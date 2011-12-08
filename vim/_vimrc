@@ -11,8 +11,6 @@ set undofile
 
 syntax on
 
-set vb
-set t_vb=.
 set nocompatible
 set modelines=0
 set tabstop=4
@@ -138,30 +136,3 @@ au Bufenter *.ghci compiler ghc
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
-" Clojure setup
-let vimfiles=$HOME . "/.vim"
-let sep=":"
-let classpath = join(
-   \[".",
-   \ "src", "src/main/clojure", "src/main/resources",
-   \ "test", "src/test/clojure", "src/test/resources",
-   \ "classes", "target/classes",
-   \ "lib/*", "lib/dev/*",
-   \ "bin",
-   \ vimfiles."/lib/*"
-   \],
-   \ sep)
-let vimclojureRoot = vimfiles."/bundle/vimclojure-2.2.0"
-let vimclojure#HighlightBuiltins=1
-let vimclojure#HighlightContrib=1
-let vimclojure#DynamicHighlighting=1
-let vimclojure#ParenRainbow=1
-let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = vimclojureRoot."/lib/nailgun/ng"
-
-" Start vimclojure nailgun server (uses screen.vim to manage lifetime)
-nmap <silent> <Leader>sc :execute "ScreenShell java -cp \"" . classpath . sep . vimclojureRoot . "/lib/*" . "\" vimclojure.nailgun.NGServer 127.0.0.1" <cr>
-
-" Start a generic Clojure repl (uses screen.vim)
-nmap <silent> <Leader>sC :execute "ScreenShell java -cp \"" . classpath . "\" clojure.main" <cr>
