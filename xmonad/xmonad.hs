@@ -46,6 +46,8 @@ isSplash = isInProperty "_NET_WM_WINDOW_TYPE" "_NET_WM_WINDOW_TYPE_SPLASH"
 -- Create custom managehook
 customManageHook :: [ManageHook]
 customManageHook = [
+    className =? "Unity-2d-panel" --> doIgnore,
+    className =? "Unity-2d-launcher" --> doFloat,
     isSplash --> doIgnore, -- Do not layout splashscreens such as Gnome Do
     title =? "Aspect" --> doIgnore, -- Ignore Aspect VST plugin
     title =? "Resound" --> doIgnore, -- Ignore Resound VST plugin
