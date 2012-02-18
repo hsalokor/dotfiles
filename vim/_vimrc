@@ -133,8 +133,8 @@ cmap w!! w !sudo tee % >/dev/null
 " Setup Haskell mode
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
-au Bufenter *.hs compiler ghc
-au Bufenter *.ghci compiler ghc
+au Bufenter *.hs compiler ghcmod_check
+au Bufenter *.ghci compiler ghcmod_check
 
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
