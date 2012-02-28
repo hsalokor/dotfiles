@@ -17,5 +17,6 @@ Bundle 'Rainbow-Parenthesis'
 Bundle 'easytags.vim'
 Bundle 'VimClojure'
 Bundle 'taglist.vim'
+Bundle 'yankstack'
 
 Bundle 'git://git.wincent.com/command-t.git'
