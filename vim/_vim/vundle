@@ -13,5 +13,9 @@ Bundle 'scrooloose/syntastic'
 
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'Rainbow-Parenthesis'
+Bundle 'easytags.vim'
+Bundle 'VimClojure'
+Bundle 'taglist.vim'
 
 Bundle 'git://git.wincent.com/command-t.git'
