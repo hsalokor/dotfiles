@@ -2,9 +2,14 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'christoomey/vim-space'
+Bundle 'mutewinter/vim-indent-guides'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tomtom/quickfixsigns_vim'
+Bundle 'tpope/vim-surround'
 
-Bundle 'NERDTree'
-Bundle 'NERDCommenter'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 
