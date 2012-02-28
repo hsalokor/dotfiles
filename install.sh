@@ -20,4 +20,7 @@ mkdir -p ~/.vim
 rm -rf ~/.vim/bundle/*
 cp -rf vim/_vim/* ~/.vim/
 
+# Install vim bundles
+vim +BundleInstall +qall
+
 cp -rf tmux.conf ~/.tmux.conf
