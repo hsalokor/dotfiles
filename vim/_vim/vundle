@@ -9,6 +9,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tomtom/quickfixsigns_vim'
 Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/syntastic'
 
 Bundle 'L9'
 Bundle 'FuzzyFinder'
