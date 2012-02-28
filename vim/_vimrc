@@ -44,6 +44,9 @@ set textwidth=79
 set formatoptions=qrn1
 set nospell
 
+" Setup YankStack before any yank/paste keys are redefined
+call yankstack#setup()
+
 let mapleader = ","
 
 nnoremap <leader><space> :noh<cr>
