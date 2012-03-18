@@ -120,19 +120,12 @@ nnoremap <leader>t :TlistToggle<cr>
 nnoremap <silent> <leader>Y :YRShow<cr>
 
 " Rainbows!
-call rainbow_parenthsis#LoadBraces ()
-call rainbow_parenthsis#LoadSquare ()
-call rainbow_parenthsis#LoadRound ()
-call rainbow_parenthsis#LoadChevrons ()
-call rainbow_parenthsis#Activate ()
 nmap <leader>R :RainbowParenthesesToggle<CR>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
 
 " Setup Haskell mode
-let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s %s"
 au Bufenter *.hs compiler ghcmod_check
 au Bufenter *.ghci compiler ghcmod_check
 

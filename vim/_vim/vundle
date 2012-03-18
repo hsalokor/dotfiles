@@ -1,4 +1,5 @@
 Bundle 'gmarik/vundle'
+Bundle 'yankstack'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -17,6 +18,10 @@ Bundle 'Rainbow-Parenthesis'
 Bundle 'easytags.vim'
 Bundle 'VimClojure'
 Bundle 'taglist.vim'
-Bundle 'yankstack'
 
 Bundle 'git://git.wincent.com/command-t.git'
+
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/neocomplcache'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'ujihisa/neco-ghc'
