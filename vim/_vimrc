@@ -1,13 +1,14 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Load Vundle bundle config
+source ~/.vim/vundle
+
 filetype plugin indent on
 
 colorscheme neverland2
-
-" Vim 7.3-specific options
-" These options are available only in Vim 7.3
-set relativenumber
-set undofile
 
 syntax on
 
@@ -42,6 +43,9 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 set nospell
+
+" Setup YankStack before any yank/paste keys are redefined
+call yankstack#setup()
 
 let mapleader = ","
 
