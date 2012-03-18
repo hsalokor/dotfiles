@@ -30,6 +30,7 @@ vim +BundleInstall +qall
 
 # Compile vimproc
 pushd ~/.vim/bundle/vimproc/
+make -f make_gcc.mak clean
 make -f make_gcc.mak
 popd
 
