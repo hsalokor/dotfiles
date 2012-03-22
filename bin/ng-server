@@ -1,0 +1,19 @@
+#! /bin/bash
+ 
+CLOJURE_JAR=$HOME/bin/jars/clojure-1.3.0.jar
+VIMCLOJURE_SERVER_JAR=$HOME/bin/jars/vimclojure-server.jar
+
+if [ ! -f $VIMCLOJURE_SERVER_JAR ]; then
+    echo "Error! Unable to find VimClojure nailgun server jar at '$VIMCLOJURE_SERVER_JAR'"
+    exit 1
+fi
+ 
+LEIN_CLASSPATH=$(lein classpath)
+ 
+if [ ! $LEIN_CLASSPATH ]; then
+    echo "Warning! Unable to get classpath from lein, just using existing classpath, expecting clojure jars to be available"
+fi
+ 
+NG_CLASSPATH="$VIMCLOJURE_SERVER_JAR:$CLOJURE_JAR:$LEIN_CLASSPATH:$CLASSPATH"
+echo java -server -cp "$NG_CLASSPATH" vimclojure.nailgun.NGServer
+java -server -cp "$NG_CLASSPATH" vimclojure.nailgun.NGServer

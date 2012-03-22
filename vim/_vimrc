@@ -119,8 +119,9 @@ nnoremap <leader>t :TlistToggle<cr>
 " Yankring
 nnoremap <silent> <leader>Y :YRShow<cr>
 
-" Rainbows!
-nmap <leader>R :RainbowParenthesesToggle<CR>
+" VimClojure setup
+let vimclojure#WantNailgun = 1
+let g:vimclojure#ParenRainbow = 1
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
