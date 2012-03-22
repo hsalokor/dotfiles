@@ -16,6 +16,11 @@ nmap <F3> :so ~/.gvimrc.fullscreen<CR>
 
 highlight SpellBad term=underline gui=undercurl guisp=Orange
 
+if has("gui_macvim")
+    macmenu &File.New\ Tab key=<nop>
+    map <D-t> :CommandT<CR>
+endif
+
 " Source a local configuration file if available.
 if filereadable(expand("~/.gvimrc.local"))
   source ~/.gvimrc.local

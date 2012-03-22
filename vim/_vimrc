@@ -45,13 +45,13 @@ set formatoptions=qrn1
 set nospell
 
 " Setup YankStack before any yank/paste keys are redefined
-call yankstack#setup()
+if exists(":Yanks")
+    call yankstack#setup()
+end
 
 let mapleader = ","
 
 nnoremap <leader><space> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
 
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=55
@@ -105,19 +105,13 @@ nnoremap <leader><tab> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 let NERDTreeDirArrows=1
 
-" Close buffer without closing window (using bufkill)
-nnoremap <leader>k :BD<cr>
-
 " Fuzzy matching key bindings
 nmap <leader>o :FufFile<cr>
 nmap <leader>O :FufFile **/<cr>
 nmap <leader>d :FufBuffer<cr>
 
-" Tag list
-nnoremap <leader>t :TlistToggle<cr>
-
-" Yankring
-nnoremap <silent> <leader>Y :YRShow<cr>
+" Command-T
+nnoremap <leader>t :CommandT<cr>
 
 " VimClojure setup
 let vimclojure#WantNailgun = 1

@@ -7,24 +7,16 @@ git submodule update
 cabal update
 cabal install ghc-mod
 
-if [ -e ~/.vimrc ]
-then
-    mv ~/.vimrc ~/.vimrc.bak
-fi
+# Copy vim configs
 cp -rf vim/_vimrc ~/.vimrc
 
-if [ -e ~/.gvimrc ]
-then
-    mv ~/.gvimrc ~/.gvimrc.bak
-fi
 cp -rf vim/_gvimrc ~/.gvimrc
 
+# Setup vim directory
 if [ -e ~/.vim ]
 then
-    rm -rf ~/.vim.bak
-    mv ~/.vim ~/.vim.bak
+    rm -rf ~/.vim
 fi
-
 mkdir -p ~/.vim
 rm -rf ~/.vim/bundle/*
 cp -rf vim/_vim/* ~/.vim/
@@ -42,4 +34,11 @@ make -f make_unix.mak
 make -f make_mac.mak
 popd
 
+# Compile command-t extension
+pushd ~/.vim/bundle/command-t/ruby/command-t/
+ruby extconf.rb
+make
+popd
+
+# Copy tmux config
 cp -rf tmux.conf ~/.tmux.conf
