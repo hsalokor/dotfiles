@@ -15,9 +15,7 @@ Bundle 'VimClojure'
 
 " Repl (experimental)
 Bundle 'Shougo/vimshell'
-Bundle 'ujihisa/repl.vim'
 Bundle 'quickrun.vim'
-Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
 
 " Haskell
 Bundle 'Shougo/vimproc'

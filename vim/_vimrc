@@ -120,10 +120,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 let g:neocomplcache_enable_at_startup = 1
 
-" Setup Haskell mode
-au Bufenter *.hs compiler ghcmod_check
-au Bufenter *.ghci compiler ghcmod_check
-
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
