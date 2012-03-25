@@ -84,9 +84,6 @@ nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
 
-" Go to tag
-nnoremap <leader>f <C-]>
-
 " Remove trailing whitespace from all lines in file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -116,6 +113,7 @@ nnoremap <leader>t :CommandT<cr>
 " VimClojure setup
 let vimclojure#WantNailgun = 1
 let g:vimclojure#ParenRainbow = 1
+let clj_want_gorilla = 1
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null

@@ -1,27 +1,38 @@
 Bundle 'gmarik/vundle'
-Bundle 'yankstack'
+
+" Essentials
 Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'git://git.wincent.com/command-t.git'
+
+Bundle 'yankstack'
+
+" Clojure
+Bundle 'VimClojure'
+
+" Repl (experimental)
+Bundle 'Shougo/vimshell'
+Bundle 'ujihisa/repl.vim'
+Bundle 'quickrun.vim'
+Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
+
+" Haskell
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/neocomplcache'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'Twinside/vim-hoogle'
+
+" Nicetohaves
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'christoomey/vim-space'
 Bundle 'mutewinter/vim-indent-guides'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tomtom/quickfixsigns_vim'
 Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/syntastic'
 
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'Rainbow-Parenthesis'
-Bundle 'easytags.vim'
-Bundle 'VimClojure'
-Bundle 'taglist.vim'
-
-Bundle 'git://git.wincent.com/command-t.git'
-
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/neocomplcache'
-Bundle 'eagletmt/ghcmod-vim'
-Bundle 'ujihisa/neco-ghc'
