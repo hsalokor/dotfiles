@@ -7,6 +7,10 @@ git submodule update
 cabal update
 cabal install ghc-mod
 
+# Install local Hoogle
+cabal install hoogle
+hoogle data
+
 # Copy vim configs
 cp -rf vim/_vimrc ~/.vimrc
 
