@@ -35,7 +35,7 @@ vim +BundleInstall +qall
 # Compile vimproc
 pushd ~/.vim/bundle/vimproc/
 make -f make_unix.mak
-make -f make_mac.mak
+make -f make_mac_old.mak
 popd
 
 # Compile command-t extension
