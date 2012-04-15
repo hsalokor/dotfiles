@@ -14,8 +14,7 @@ Bundle 'yankstack'
 Bundle 'VimClojure'
 
 " Repl (experimental)
-Bundle 'Shougo/vimshell'
-Bundle 'quickrun.vim'
+Bundle 'tslime.vim'
 
 " Haskell
 Bundle 'Shougo/vimproc'
