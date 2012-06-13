@@ -10,11 +10,13 @@
 
 ;; Add in your own as you wish:
 (defvar my-packages
-  '(starter-kit
-    starter-kit-lisp
-    starter-kit-bindings
+  '(evil
     textmate
-    paredit))
+    sr-speedbar
+    paredit
+    starter-kit
+    starter-kit-lisp
+    starter-kit-bindings))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
