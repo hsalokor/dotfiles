@@ -13,6 +13,9 @@
 
 (require 'evil)
 (require 'sr-speedbar)
+(require 'rainbow-delimiters)
+
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ; Bind esc to quit
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
