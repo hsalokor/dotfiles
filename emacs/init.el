@@ -11,8 +11,10 @@
 ;; Add in your own as you wish:
 (defvar my-packages
   '(evil
+    evil-leader
     textmate
     sr-speedbar
+    rainbow-delimiters
     paredit
     starter-kit
     starter-kit-lisp
