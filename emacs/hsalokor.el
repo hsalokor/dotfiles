@@ -17,15 +17,11 @@
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-; Bind esc to quit
-(define-key evil-normal-state-map [escape] 'keyboard-quit)
-(define-key evil-visual-state-map [escape] 'keyboard-quit)
-(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
-
 ; Evil mode
 (evil-mode 1)
 
+; Fix lisp indent
+(setq lisp-indent-offset 2)
+
+; Add lein to path
+(setenv "PATH" (concat "/home/hsalokor/bin:" (getenv "PATH")))

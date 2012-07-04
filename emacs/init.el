@@ -16,6 +16,7 @@
     sr-speedbar
     rainbow-delimiters
     paredit
+    clojure-mode
     starter-kit
     starter-kit-lisp
     starter-kit-bindings))
