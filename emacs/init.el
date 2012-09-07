@@ -27,3 +27,4 @@
     (package-install p)))
 
 (setq package-user-dir "~/.emacs.d/elpa")
+(setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
