@@ -17,6 +17,7 @@
     rainbow-delimiters
     paredit
     clojure-mode
+    haskell-mode
     nrepl
     starter-kit
     starter-kit-lisp
