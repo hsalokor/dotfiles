@@ -1,6 +1,9 @@
 (let ((default-directory "~/.emacs.d/elpa/"))
   (normal-top-level-add-subdirs-to-load-path))
 
+(add-to-list 'load-path (car (directory-files "~/.cabal/share/" t "ghc-mod-.*")))
+(add-to-list 'exec-path "~/.cabal/bin/")
+
 (require 'package)
 (add-to-list 'package-archives
     '("melpa" . "http://melpa.milkbox.net/packages/") t)
