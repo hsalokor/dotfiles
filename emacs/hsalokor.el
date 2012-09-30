@@ -16,8 +16,11 @@
 (setq tab-width 2)
 
 ; Autoload ghc-mode
+;(autoload 'ghc-init "ghc" nil t)
+;(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
 (autoload 'ghc-init "ghc" nil t)
-(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
+(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+(add-hook 'haskell-mode-hook (lambda () (turn-on-haskell-indentation)))
 
 ; Add lein to path
 (setenv "PATH" (concat "/home/hsalokor/bin:" (getenv "PATH")))
