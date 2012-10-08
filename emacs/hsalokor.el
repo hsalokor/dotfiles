@@ -32,3 +32,8 @@
 ; Textmate mode
 (textmate-mode)
 
+; Autocomplete mode
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
+(ac-config-default)
+
