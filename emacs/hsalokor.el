@@ -28,3 +28,7 @@
 
 ; Add lein to path
 (setenv "PATH" (concat "/home/hsalokor/bin:" (getenv "PATH")))
+
+; Textmate mode
+(textmate-mode)
+
