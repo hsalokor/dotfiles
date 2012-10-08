@@ -16,6 +16,7 @@
   '(evil
     evil-leader
     textmate
+    auto-complete
     sr-speedbar
     rainbow-delimiters
     paredit
