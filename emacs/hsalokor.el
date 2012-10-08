@@ -8,6 +8,10 @@
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+(if (eq system-type 'darwin)
+  (setq mac-option-key-is-meta t)
+  (setq mac-right-option-modifier nil))
+
 ; Evil mode
 (evil-mode 1)
 
