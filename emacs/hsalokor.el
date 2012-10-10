@@ -37,3 +37,5 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (ac-config-default)
 
+; Nrepl config
+(add-to-list 'evil-emacs-state-modes 'nrepl-mode)
