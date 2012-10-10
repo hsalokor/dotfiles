@@ -37,5 +37,9 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (ac-config-default)
 
+; Add haskell source for autocomplete
+(require 'haskell-autocomplete)
+(add-to-list 'ac-sources 'ac-source-ghc-mod)
+
 ; Nrepl config
 (add-to-list 'evil-emacs-state-modes 'nrepl-mode)
