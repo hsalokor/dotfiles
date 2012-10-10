@@ -27,7 +27,7 @@
 (add-hook 'haskell-mode-hook (lambda () (turn-on-haskell-indentation)))
 
 ; Add lein to path
-(setenv "PATH" (concat "/home/hsalokor/bin:" (getenv "PATH")))
+(setenv "PATH" (concat "~/bin:" (getenv "PATH")))
 
 ; Textmate mode
 (textmate-mode)
