@@ -22,6 +22,8 @@
     paredit
     clojure-mode
     haskell-mode
+    flymake-css
+    flymake-shell
     nrepl
     starter-kit
     starter-kit-lisp
