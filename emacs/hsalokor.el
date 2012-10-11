@@ -1,19 +1,17 @@
-;(set-default-font "Menlo-15")
-(load-theme 'deeper-blue)
-(tool-bar-mode -1)
-
 (require 'evil)
 (require 'sr-speedbar)
 (require 'rainbow-delimiters)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-(if (eq system-type 'darwin)
-  (setq mac-option-key-is-meta t)
-  (setq mac-right-option-modifier nil))
-
 ; Evil mode
 (evil-mode 1)
+
+; Mac fixes
+(if (eq system-type "darwin")
+  (set-default-font "Menlo-15")
+  (setq mac-option-key-is-meta t)
+  (setq mac-right-option-modifier nil))
 
 ; Fix lisp indent
 (setq indent-tabs-mode nil)
