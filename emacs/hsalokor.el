@@ -48,3 +48,8 @@
 ; NRepl autocomplete using ac-nrepl
 (require 'clojure-autocomplete)
 
+(if window-system
+  (progn (load-theme 'deeper-blue)
+         (tool-bar-mode -1))
+  (progn (load-theme 'tango-dark)))
+
