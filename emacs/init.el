@@ -2,6 +2,7 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 (add-to-list 'load-path (car (directory-files "~/.cabal/share/" t "ghc-mod-.*")))
+(add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'exec-path "~/.cabal/bin/")
 
 (require 'package)
