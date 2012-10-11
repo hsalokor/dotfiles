@@ -45,3 +45,6 @@
 (setq nrepl-popup-stacktraces nil)
 (add-to-list 'same-window-buffer-names "*nrepl*") 
 
+; NRepl autocomplete using ac-nrepl
+(require 'clojure-autocomplete)
+
