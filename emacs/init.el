@@ -26,6 +26,7 @@
     flymake-css
     flymake-shell
     nrepl
+    ac-nrepl
     starter-kit
     starter-kit-lisp
     starter-kit-bindings))
