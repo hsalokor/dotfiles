@@ -10,3 +10,5 @@
 (defvar ac-source-ghc-mod
   '((init . ghc-init)
     (candidates . (haskell-complete))))
+
+(provide 'haskell-autocomplete)
