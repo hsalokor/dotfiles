@@ -6,6 +6,7 @@
 
 ; Evil mode
 (evil-mode 1)
+(setq evil-default-cursor t) 
 
 ; Mac fixes
 (if (eq system-type "darwin")
