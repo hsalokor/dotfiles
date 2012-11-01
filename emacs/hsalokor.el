@@ -21,7 +21,7 @@
 
 ; Autoload ghc-mode
 ;(autoload 'ghc-init "ghc" nil t)
-;(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
+(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
 (add-hook 'haskell-mode-hook (lambda () (turn-on-haskell-indentation)))
