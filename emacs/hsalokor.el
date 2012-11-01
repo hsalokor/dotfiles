@@ -10,7 +10,8 @@
 
 ; Mac fixes
 (if (eq system-type "darwin")
-  (set-default-font "Menlo-15")
+  (set-default-font "Menlo")
+  (set-face-attribute 'default nil :height 160)
   (setq mac-option-key-is-meta t)
   (setq mac-right-option-modifier nil))
 
