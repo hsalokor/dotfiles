@@ -30,6 +30,7 @@
     flymake-shell
     nrepl
     ac-nrepl
+    geiser
     starter-kit
     starter-kit-lisp
     starter-kit-bindings))
