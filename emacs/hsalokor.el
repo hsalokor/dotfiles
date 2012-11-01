@@ -54,4 +54,3 @@
   (progn (load-theme 'deeper-blue)
          (tool-bar-mode -1))
   (progn (load-theme 'tango-dark)))
-
