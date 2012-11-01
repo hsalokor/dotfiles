@@ -4,6 +4,7 @@
 (add-to-list 'load-path (car (directory-files "~/.cabal/share/" t "ghc-mod-.*")))
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'exec-path "~/.cabal/bin/")
+(add-to-list 'exec-path "/usr/local/bin/")
 
 (require 'package)
 (add-to-list 'package-archives
