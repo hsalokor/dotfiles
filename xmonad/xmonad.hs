@@ -10,8 +10,7 @@ import XMonad.Config.Desktop (desktopLayoutModifiers)
 import XMonad.Hooks.ManageHelpers
 import XMonad.Util.EZConfig
 import XMonad.Layout.IM
-import XMonad.Layout.Named
-import XMonad.Hooks.SetWMName
+import XMonad.Layout.Renamed
 import Data.Ratio ((%))
 
 nmaster = 1
@@ -20,22 +19,22 @@ sideRatio = 75/100
 bottomRatio = 65/100
 
 -- Wide layout
-wideLayout = named "Wide" $ Mirror $ Tall nmaster delta sideRatio
+wideLayout = renamed [Replace "Wide"] $ Mirror $ Tall nmaster delta sideRatio
 
 -- Simple grid layout
-gridLayout = named "Grid" $ Grid
+gridLayout = renamed [Replace "Grid"] $ Grid
 
 -- Code layout (two windows on right), zoom on focus
-codeLayout = named "Code" $ limitWindows 3 $ magnifiercz' 2.9 $ Tall nmaster delta sideRatio
+codeLayout = renamed [Replace "Code"] $ limitWindows 3 $ magnifiercz' 2.9 $ Tall nmaster delta sideRatio
 
 -- Mirrored code layout (two windows on bottom), zoom on focus
-codeLayoutMirrored = named "MCode" $ limitWindows 3 $ magnifiercz' 1.9 $ Mirror $ Tall nmaster delta bottomRatio
+codeLayoutMirrored = renamed [Replace "MCode"] $ limitWindows 3 $ magnifiercz' 1.9 $ Mirror $ Tall nmaster delta bottomRatio
 
 -- Tabbed layout
-tabbedLayout = named "Tabbed" $ simpleTabbed
+tabbedLayout = renamed [Replace "Tabbed"] $ simpleTabbed
 
 -- IM Tabbed layout
-imTabbedLayout = named "IMTabbed" $ withIM (1%5) (ClassName "Empathy") simpleTabbed
+imTabbedLayout = renamed [Replace "IMTabbed"] $ withIM (1%5) (ClassName "Empathy") simpleTabbed
 
 -- Hook layouts together to a ring
 customLayoutHook = gridLayout ||| wideLayout ||| tabbedLayout ||| imTabbedLayout ||| codeLayout ||| codeLayoutMirrored ||| Full
@@ -61,8 +60,6 @@ customManageHook = [
 main = xmonad $ gnomeConfig {
     modMask = mod4Mask,
     focusFollowsMouse = False,
-    -- Fix Java apps by setting LG3D which apparently triggers different rendering path
-    startupHook = setWMName "LG3D",
     layoutHook = smartBorders $ desktopLayoutModifiers customLayoutHook,
     manageHook = manageHook gnomeConfig <+> composeAll customManageHook
 } `additionalKeysP` [
