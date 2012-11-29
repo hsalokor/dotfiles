@@ -12,11 +12,14 @@
 (global-linum-mode t)
 
 ; Mac fixes
-(if (eq system-type "darwin")
-  (set-default-font "Menlo")
-  (set-face-attribute 'default nil :height 160)
-  (setq mac-option-key-is-meta t)
-  (setq mac-right-option-modifier nil))
+(if (eq system-type 'darwin)
+    (progn
+      (set-face-attribute 'default nil
+                          :family "ProggySquare"
+                          :height 110
+                          :weight 'normal)
+      (setq mac-option-key-is-meta t)
+      (setq mac-right-option-modifier nil)))
 
 ; Fix lisp indent
 (setq indent-tabs-mode nil)
