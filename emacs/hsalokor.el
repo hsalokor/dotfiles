@@ -62,6 +62,11 @@
 (require 'clojure-autocomplete)
 
 (if window-system
-  (progn (load-theme 'deeper-blue)
+  (progn (color-theme-sanityinc-solarized-dark)
          (tool-bar-mode -1))
   (progn (load-theme 'tango-dark)))
+
+; Disable italics
+(mapc
+ (lambda (face) (set-face-attribute face nil :weight 'normal :italic nil))
+ (face-list))
