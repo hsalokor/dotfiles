@@ -8,6 +8,9 @@
 (evil-mode 1)
 (setq evil-default-cursor t) 
 
+; Line numbers
+(global-linum-mode t)
+
 ; Mac fixes
 (if (eq system-type "darwin")
   (set-default-font "Menlo")
