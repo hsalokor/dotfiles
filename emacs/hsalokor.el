@@ -32,7 +32,6 @@
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
 ; Autoload ghc-mode
-;(autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
