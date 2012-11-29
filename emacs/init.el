@@ -31,6 +31,7 @@
     nrepl
     ac-nrepl
     geiser
+    color-theme-sanityinc-solarized
     starter-kit
     starter-kit-lisp
     starter-kit-bindings))
