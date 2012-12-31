@@ -66,6 +66,9 @@
          (tool-bar-mode -1))
   (progn (load-theme 'tango-dark)))
 
+; Enable global autorevert
+(global-auto-revert-mode)
+
 ; Disable italics
 (mapc
  (lambda (face) (set-face-attribute face nil :weight 'normal :italic nil))
