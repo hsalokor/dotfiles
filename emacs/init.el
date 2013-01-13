@@ -32,9 +32,17 @@
     ac-nrepl
     geiser
     color-theme-sanityinc-solarized
+    align-cljlet
+    cljdoc
+    cljsbuild-mode
     starter-kit
     starter-kit-lisp
-    starter-kit-bindings))
+    starter-kit-bindings
+
+    ; Testing
+    clojure-project-mode
+    clojure-test-mode
+    clojurescript-mode))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))

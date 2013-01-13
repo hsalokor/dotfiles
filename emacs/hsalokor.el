@@ -14,10 +14,10 @@
 ; Mac fixes
 (if (eq system-type 'darwin)
     (progn
-      (set-face-attribute 'default nil
-                          :family "ProggySquare"
-                          :height 110
-                          :weight 'normal)
+    (set-face-attribute 'default nil
+                        :family "ProggySquare"
+                        :height 110
+                        :weight 'normal)
       (setq mac-option-key-is-meta t)
       (setq mac-right-option-modifier nil)))
 
@@ -54,12 +54,19 @@
 
 ; Nrepl config
 (add-to-list 'evil-emacs-state-modes 'nrepl-mode)
+
+(add-hook 'clojure-mode (define-key evil-normal-state-map "\M-." 'nrepl-jump))
+
+
 (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
 (setq nrepl-popup-stacktraces nil)
 (add-to-list 'same-window-buffer-names "*nrepl*") 
 
 ; NRepl autocomplete using ac-nrepl
 (require 'clojure-autocomplete)
+
+; Clojure alignment
+(require 'align-cljlet)
 
 (if window-system
   (progn (color-theme-sanityinc-solarized-dark)
