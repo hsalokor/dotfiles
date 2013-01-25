@@ -69,7 +69,7 @@
 (require 'align-cljlet)
 
 (if window-system
-  (progn (color-theme-sanityinc-solarized-dark)
+  (progn (color-theme-sanityinc-tomorrow-night)
          (tool-bar-mode -1))
   (progn (load-theme 'tango-dark)))
 

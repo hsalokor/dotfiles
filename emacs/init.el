@@ -32,6 +32,7 @@
     ac-nrepl
     geiser
     color-theme-sanityinc-solarized
+    color-theme-sanityinc-tomorrow
     align-cljlet
     cljdoc
     cljsbuild-mode
