@@ -22,11 +22,11 @@
       (setq mac-right-option-modifier nil)))
 
 ; Linux setup
-(if (eq system-type 'unix)
+(if (eq system-type 'gnu/linux)
     (progn
       (set-face-attribute 'default nil
                           :family "Ubuntu Mono"
-                          :height 120
+                          :height 150
                           :weight 'normal)))
 
 ; Fix lisp indent
