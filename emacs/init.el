@@ -28,6 +28,7 @@
     haskell-mode
     flymake-css
     flymake-shell
+    less-css-mode
     nrepl
     ac-nrepl
     geiser
