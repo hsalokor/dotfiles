@@ -85,3 +85,7 @@
 (mapc
  (lambda (face) (set-face-attribute face nil :weight 'normal :italic nil))
  (face-list))
+
+(setq-default tab-width 2)
+(require 'go-autocomplete)
+(require 'auto-complete-config)
