@@ -1,3 +1,6 @@
+# Converted to plugin, original from http://www.ihashacks.com/blog/2013/01/19/zsh-ified-undistract-me/
+# by Brandon Pierce
+
 # commands to ignore
 cmdignore=(vim top htop)
 
