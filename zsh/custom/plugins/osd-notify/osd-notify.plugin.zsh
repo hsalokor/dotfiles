@@ -2,11 +2,11 @@
 # by Brandon Pierce
 
 # commands to ignore
-cmdignore=(vim top htop)
+cmdignore=(vim top htop git gitk tig)
 
 # end and compare timer, notify-send if needed
 function notifyosd-precmd() {
-	retval=$?
+    retval=$?
     if [[ ${cmdignore[(r)$cmd_basename]} == $cmd_basename ]]; then
         return
     else
@@ -15,15 +15,15 @@ function notifyosd-precmd() {
             ((cmd_time=$cmd_end - $cmd_start))
         fi
         if [ $retval -gt 0 ]; then
-			cmdstat="with warning"
-		else
+            cmdstat="with warning"
+        else
             cmdstat="successfully"
         fi
         if [ ! -z "$cmd" -a $cmd_time -gt 10 ]; then
             if [ ! -z $SSH_TTY ] ; then
-                notify-send -i utilities-terminal -u low "$cmd_basename on `hostname` completed $cmdstat" "\"$cmd\" took $cmd_time seconds";
+                notify-send -i utilities-terminal -t 60000 -u low "$cmd_basename on `hostname` completed $cmdstat" "\"$cmd\" took $cmd_time seconds";
             else
-                notify-send -i utilities-terminal -u low "$cmd_basename completed $cmdstat" "\"$cmd\" took $cmd_time seconds"
+                notify-send -i utilities-terminal -t 60000 -u low "$cmd_basename completed $cmdstat" "\"$cmd\" took $cmd_time seconds"
             fi
         fi
         unset cmd
