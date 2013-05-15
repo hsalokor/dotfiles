@@ -21,9 +21,9 @@ function notifyosd-precmd() {
         fi
         if [ ! -z "$cmd" -a $cmd_time -gt 10 ]; then
             if [ ! -z $SSH_TTY ] ; then
-                notify-send -i utilities-terminal -t 60000 -u low "$cmd_basename on `hostname` completed $cmdstat" "\"$cmd\" took $cmd_time seconds";
+                notify-send -i utilities-terminal --hint int:transient:1 -t 60000 -u low "$cmd_basename on `hostname` completed $cmdstat" "\"$cmd\" took $cmd_time seconds";
             else
-                notify-send -i utilities-terminal -t 60000 -u low "$cmd_basename completed $cmdstat" "\"$cmd\" took $cmd_time seconds"
+                notify-send -i utilities-terminal --hint int:transient:1 -t 60000 -u low "$cmd_basename completed $cmdstat" "\"$cmd\" took $cmd_time seconds"
             fi
         fi
         unset cmd
