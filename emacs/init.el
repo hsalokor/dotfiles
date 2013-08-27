@@ -1,10 +1,12 @@
 (let ((default-directory "~/.emacs.d/elpa/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-(add-to-list 'load-path (car (directory-files "~/.cabal/share/" t "ghc-mod-.*")))
+(if (and (file-accessible-directory-p "~/.cabal/share/")
+         (file-accessible-directory-p "~/.cabal/bin/"))
+    (add-to-list 'load-path (car (directory-files "~/.cabal/share/" t "ghc-mod-.*")))
+    (add-to-list 'exec-path "~/.cabal/bin/"))
+
 (add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'exec-path "~/.cabal/bin/")
-(add-to-list 'exec-path "/usr/lib/go/bin/")
 (add-to-list 'exec-path "/usr/local/bin/")
 
 (require 'package)
@@ -22,13 +24,14 @@
     evil-leader
     textmate
     auto-complete
-    sr-speedbar
     rainbow-delimiters
     paredit
     clojure-mode
     haskell-mode
     flymake-css
     flymake-shell
+    flymake-python-pyflakes
+    ag
     less-css-mode
     nrepl
     ac-nrepl
@@ -41,11 +44,8 @@
     starter-kit
     starter-kit-lisp
     starter-kit-bindings
-
-    ; Testing
-    clojure-project-mode
-    clojure-test-mode
-    clojurescript-mode))
+    etags-select
+    elpy))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))

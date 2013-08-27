@@ -22,11 +22,11 @@
       (setq mac-right-option-modifier nil)))
 
 ; Linux setup
-(if (eq system-type 'gnu/linux)
+(if (eq system-type 'unix)
     (progn
       (set-face-attribute 'default nil
                           :family "Ubuntu Mono"
-                          :height 150
+                          :height 120
                           :weight 'normal)))
 
 ; Fix lisp indent
@@ -38,12 +38,6 @@
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
-
-; Autoload ghc-mode
-(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
-(autoload 'ghc-init "ghc" nil t)
-(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
-(add-hook 'haskell-mode-hook (lambda () (turn-on-haskell-indentation)))
 
 ; Add lein to path
 (setenv "PATH" (concat "~/bin:" (getenv "PATH")))
@@ -57,8 +51,18 @@
 (ac-config-default)
 
 ; Add haskell source for autocomplete
-(require 'haskell-autocomplete)
-(add-to-list 'ac-sources 'ac-source-ghc-mod)
+(if (and (file-accessible-directory-p "~/.cabal/share/")
+         (file-accessible-directory-p "~/.cabal/bin/"))
+    (require 'haskell-autocomplete)
+    ; Autoload ghc-mode
+    (add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
+    (autoload 'ghc-init "ghc" nil t)
+    (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+    (add-hook 'haskell-mode-hook (lambda () (turn-on-haskell-indentation)))
+    (add-to-list 'ac-sources 'ac-source-ghc-mod))
+
+;; Tags mode
+(require 'etags-select)
 
 ; Nrepl config
 (add-to-list 'evil-emacs-state-modes 'nrepl-mode)
@@ -86,6 +90,10 @@
  (lambda (face) (set-face-attribute face nil :weight 'normal :italic nil))
  (face-list))
 
+(require 'ag)
+
 (setq-default tab-width 2)
-(require 'go-autocomplete)
-(require 'auto-complete-config)
+
+; Python mode
+(package-initialize)
+(elpy-enable)
