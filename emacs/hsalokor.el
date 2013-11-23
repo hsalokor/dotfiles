@@ -1,17 +1,16 @@
 (require 'evil)
-(require 'sr-speedbar)
 (require 'rainbow-delimiters)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-; Evil mode
+;; Evil mode
 (evil-mode 1)
 (setq evil-default-cursor t) 
 
-; Line numbers
+;; Line numbers
 (global-linum-mode t)
 
-; Mac fixes
+;; Mac fixes
 (if (eq system-type 'darwin)
     (progn
       (set-face-attribute 'default nil
@@ -21,7 +20,7 @@
       (setq mac-option-key-is-meta t)
       (setq mac-right-option-modifier nil)))
 
-; Linux setup
+;; Linux setup
 (if (eq system-type 'unix)
     (progn
       (set-face-attribute 'default nil
@@ -29,71 +28,64 @@
                           :height 120
                           :weight 'normal)))
 
-; Fix lisp indent
+;; Fix lisp indent
 (setq indent-tabs-mode nil)
 (setq tab-width 2)
 
-; Fix mouse scrolling
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-(setq scroll-step 1) ;; keyboard scroll one line at a time
+;; Fix mouse scrolling
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;;; scroll window under mouse
+(setq scroll-step 1) ;;; keyboard scroll one line at a time
 
-; Add lein to path
+;; Add lein to path
 (setenv "PATH" (concat "~/bin:" (getenv "PATH")))
 
-; Textmate mode
+;; Textmate mode
 (textmate-mode)
 
-; Autocomplete mode
+;; Autocomplete mode
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (ac-config-default)
 
-; Add haskell source for autocomplete
+;; Add haskell source for autocomplete
 (if (and (file-accessible-directory-p "~/.cabal/share/")
          (file-accessible-directory-p "~/.cabal/bin/"))
     (require 'haskell-autocomplete)
-    ; Autoload ghc-mode
+    ;; Autoload ghc-mode
     (add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
     (autoload 'ghc-init "ghc" nil t)
     (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
     (add-hook 'haskell-mode-hook (lambda () (turn-on-haskell-indentation)))
     (add-to-list 'ac-sources 'ac-source-ghc-mod))
 
-;; Tags mode
-(require 'etags-select)
+;; Cider config
+(add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
+(add-hook 'clojure-mode (define-key evil-normal-state-map "\M-." 'cider-jump))
+(add-hook 'cider-interaction-mode-hook 'cider-turn-on-eldoc-mode)
+(setq cider-popup-stacktraces nil)
+(add-to-list 'same-window-buffer-names "*cider*") 
 
-; Nrepl config
-(add-to-list 'evil-emacs-state-modes 'nrepl-mode)
-(add-hook 'clojure-mode (define-key evil-normal-state-map "\M-." 'nrepl-jump))
-(add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
-(setq nrepl-popup-stacktraces nil)
-(add-to-list 'same-window-buffer-names "*nrepl*") 
-
-; NRepl autocomplete using ac-nrepl
+;; Cider autocomplete using ac-nrepl
 (require 'clojure-autocomplete)
-
-; Clojure alignment
-(require 'align-cljlet)
 
 (if window-system
   (progn (color-theme-sanityinc-tomorrow-night)
          (tool-bar-mode -1))
   (progn (load-theme 'tango-dark)))
 
-; Enable global autorevert
+;; Enable global autorevert
 (global-auto-revert-mode)
 
-; Disable italics
+;; Disable italics
 (mapc
  (lambda (face) (set-face-attribute face nil :weight 'normal :italic nil))
  (face-list))
 
 (require 'ag)
 
-(setq-default tab-width 2)
 
-; Python mode
-(package-initialize)
-(elpy-enable)
+;; Fix indents
+(setq-default tab-width 2)
+(setq-default js-indent-level 2)
