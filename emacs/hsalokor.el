@@ -60,6 +60,19 @@
     (add-hook 'haskell-mode-hook (lambda () (turn-on-haskell-indentation)))
     (add-to-list 'ac-sources 'ac-source-ghc-mod))
 
+;; Clang autocomplete
+(require 'auto-complete-clang-async)
+
+(defun ac-cc-mode-setup ()
+  (setq ac-clang-complete-executable "~/.emacs.d/clang-complete")
+  (setq ac-sources '(ac-source-clang-async))
+  (ac-clang-launch-completion-process))
+
+(defun clang-ac-config ()
+  (add-hook 'c-mode-common-hook 'ac-cc-mode-setup))
+
+(clang-ac-config)
+
 ;; Cider config
 (add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
 (add-hook 'clojure-mode (define-key evil-normal-state-map "\M-." 'cider-jump))
@@ -85,7 +98,10 @@
 
 (require 'ag)
 
-
 ;; Fix indents
 (setq-default tab-width 2)
 (setq-default js-indent-level 2)
+
+;; Go autocomplete
+(require 'go-autocomplete)
+(require 'auto-complete-config)
