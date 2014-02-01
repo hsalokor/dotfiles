@@ -14,8 +14,8 @@
 (if (eq system-type 'darwin)
     (progn
       (set-face-attribute 'default nil
-                          :family "ProggySquare"
-                          :height 110
+                          :family "Monaco"
+                          :height 140
                           :weight 'normal)
       (setq mac-option-key-is-meta t)
       (setq mac-right-option-modifier nil)))
