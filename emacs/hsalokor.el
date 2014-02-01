@@ -41,9 +41,6 @@
 ;; Add lein to path
 (setenv "PATH" (concat "~/bin:" (getenv "PATH")))
 
-;; Textmate mode
-(textmate-mode)
-
 ;; Autocomplete mode
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
