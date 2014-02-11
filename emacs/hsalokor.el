@@ -102,3 +102,33 @@
 ;; Go autocomplete
 (require 'go-autocomplete)
 (require 'auto-complete-config)
+
+;; helm
+(require 'helm-config)
+(setq enable-recursive-minibuffers t)
+(helm-mode 1)
+(helm-gtags-mode 1)
+(helm-descbinds-mode)
+(setq helm-idle-delay 0.1)
+(setq helm-input-idle-delay 0.1)
+(setq helm-buffer-max-length 50)
+(setq helm-M-x-always-save-history t)
+(setq helm-buffer-details-flag nil)
+(setq helm-ff-tramp-not-fancy nil)
+(setq helm-for-files-preferred-list
+      '(helm-source-buffers-list
+        helm-source-recentf
+        helm-source-bookmarks
+        helm-source-file-cache
+        helm-source-files-in-current-dir
+	helm-source-locate))
+(add-to-list 'helm-completing-read-handlers-alist '(org-refile)) ; helm-mode does not do org-refile well
+(require 'helm-git)
+
+(setq highlight-symbol-on-navigation-p t)
+(setq highlight-symbol-idle-delay 0.2)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-mini)

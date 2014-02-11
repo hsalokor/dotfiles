@@ -38,7 +38,16 @@
     color-theme-sanityinc-solarized
     color-theme-sanityinc-tomorrow
 
-    starter-kit))
+    helm
+    helm-c-yasnippet
+    helm-descbinds
+    helm-git
+    helm-gtags
+    helm-projectile
+  
+    starter-kit
+    starter-kit-lisp
+    starter-kit-bindings))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
