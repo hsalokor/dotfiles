@@ -43,8 +43,11 @@
     helm-descbinds
     helm-git
     helm-gtags
+    projectile
     helm-projectile
   
+    go-mode
+
     starter-kit
     starter-kit-lisp
     starter-kit-bindings))
