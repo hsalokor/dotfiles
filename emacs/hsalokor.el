@@ -132,9 +132,12 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "s-t") 'helm-projectile)
 
 ;; Enable go-mode
 (require 'go-mode-load)
+(require 'go-autocomplete)
+(require 'auto-complete-config)
 
 ;; Enable projectile
 (projectile-global-mode)
