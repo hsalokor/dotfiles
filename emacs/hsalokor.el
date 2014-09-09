@@ -133,6 +133,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "s-t") 'helm-projectile)
+(define-key helm-find-files-map (kbd "<tab>") 'helm-execute-persistent-action)
 
 ;; Enable go-mode
 (require 'go-mode-load)
