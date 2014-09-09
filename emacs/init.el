@@ -46,6 +46,8 @@
     projectile
     helm-projectile
   
+    ggtags
+
     go-mode
 
     starter-kit
