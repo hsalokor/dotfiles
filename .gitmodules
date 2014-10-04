@@ -1,3 +1,6 @@
 [submodule "vim/_vim/bundle/vundle"]
 	path = vim/_vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.git
+[submodule "emacs/clang-autocomplete"]
+	path = emacs/clang-autocomplete
+	url = https://github.com/Golevka/emacs-clang-complete-async.git

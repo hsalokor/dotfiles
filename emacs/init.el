@@ -25,6 +25,8 @@
     auto-complete
     rainbow-delimiters
 
+    magit
+
     clojure-mode
     haskell-mode
     flymake-css
@@ -39,12 +41,9 @@
     color-theme-sanityinc-tomorrow
 
     helm
-    helm-c-yasnippet
     helm-descbinds
     helm-git
     helm-gtags
-    projectile
-    helm-projectile
   
     ggtags
 
